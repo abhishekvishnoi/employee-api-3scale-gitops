@@ -1,0 +1,48 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Product
+metadata:
+  name: employees-product
+spec:
+  name: "EmployeesProduct"
+  deployment:
+    apicastHosted:
+      authentication:
+        appKeyAppID:
+          appID: myAppID
+          appKey: myAppKey
+  metrics:
+    hits:
+      description: Number of API hits
+      friendlyName: Hits
+      unit: "hit"
+  methods:
+    getEmp:
+      friendlyName: getEmp
+    getEmpById:
+      friendlyName: getEmpById
+    addEmp:
+      friendlyName: addEmp
+  mappingRules:
+    - httpMethod: GET
+      pattern: "/api/getEmp"
+      increment: 1
+      metricMethodRef: getEmp
+    - httpMethod: GET
+      pattern: "/api/getEmp/{id}"
+      increment: 1
+      metricMethodRef: getEmpById
+    - httpMethod: POST
+      pattern: "/api/addEmp"
+      increment: 1
+      metricMethodRef: addEmp
+  applicationPlans:
+    plan01:
+      name: "Ultimate Plan "
+      setupFee: "14.56"
+    plan02:
+      name: "Featured Plan"
+      trialPeriod: 3
+      costMonth: "30.00"
+  backendUsages:
+    employees-backend:
+      path: /

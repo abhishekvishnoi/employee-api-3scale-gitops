@@ -1,0 +1,9 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Backend
+metadata:
+  name: employees-backend
+  namespace: threescale
+spec:
+  name: employees-backend
+  privateBaseURL: 'http://employees.employees.svc.cluster.local:8080'
+  systemName: employees-backend
