@@ -1,0 +1,31 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: 3scale-apimanager
+spec:
+  wildcardDomain: apps.cluster-888bx.888bx.sandbox381.opentlc.com
+  resourceRequirementsEnabled: false
+  monitoring:
+    enabled: true
+  apicast:
+    stagingSpec:
+      replicas: 2
+    productionSpec:
+      replicas: 2
+  backend:
+    listenerSpec:
+      replicas: 2
+    workerSpec:
+      replicas: 2
+    cronSpec:
+      replicas: 2
+  zync:
+    appSpec:
+      replicas: 2
+    queSpec:
+      replicas: 2
+  system:
+    appSpec:
+      replicas: 2
+    sidekiqSpec:
+      replicas: 2

@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol01
+spec:
+  capacity:
+    storage: 100G
+  nfs:
+    server: 52.65.130.45
+    path: /srv/nfs/user-vols/vol01
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
