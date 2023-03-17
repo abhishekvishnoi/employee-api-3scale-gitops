@@ -24,15 +24,15 @@ spec:
       friendlyName: addEmp
   mappingRules:
     - httpMethod: GET
-      pattern: "/api/getEmp"
+      pattern: "/emp/api/getEmp"
       increment: 1
       metricMethodRef: getEmp
     - httpMethod: GET
-      pattern: "/api/getEmp/{id}"
+      pattern: "/emp/api/getEmp/{id}"
       increment: 1
       metricMethodRef: getEmpById
     - httpMethod: POST
-      pattern: "/api/addEmp"
+      pattern: "/emp/api/addEmp"
       increment: 1
       metricMethodRef: addEmp
   applicationPlans:
