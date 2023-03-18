@@ -3,7 +3,7 @@ kind: APIManager
 metadata:
   name: 3scale-apimanager
 spec:
-  wildcardDomain: apps.cluster-888bx.888bx.sandbox381.opentlc.com
+  wildcardDomain: apps.cluster-7krvr.7krvr.sandbox2846.opentlc.com
   resourceRequirementsEnabled: false
   monitoring:
     enabled: true

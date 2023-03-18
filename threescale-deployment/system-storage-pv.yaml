@@ -6,8 +6,8 @@ spec:
   capacity:
     storage: 100Gi
   nfs:
-    server: 52.65.130.45
-    path: /srv/nfs/user-vols/vol01
+    server: 3.104.105.179
+    path: /srv/nfs/vol01
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
